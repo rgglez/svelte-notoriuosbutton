@@ -1,0 +1,180 @@
+/*
+   Copyright 2026 Rodolfo González González.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+.notorious-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 1.4em;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  background: #4f46e5;
+  color: #fff;
+  outline-offset: 2px;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.notorious-btn:focus-visible {
+  outline: 2px solid #818cf8;
+}
+
+/* ─── sweep ──────────────────────────────────────────────────────── */
+.effect-sweep::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 70%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  pointer-events: none;
+}
+
+.effect-sweep.trigger-hover::before {
+  transition: background-position 0.55s ease;
+}
+.effect-sweep.trigger-hover:hover::before {
+  background-position: 200% 0;
+}
+
+@keyframes notorious-sweep {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+.effect-sweep.trigger-auto::before {
+  animation: notorious-sweep 2s linear infinite;
+}
+
+/* ─── glow ───────────────────────────────────────────────────────── */
+.effect-glow::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 0 rgba(129, 140, 248, 0);
+  pointer-events: none;
+}
+
+.effect-glow.trigger-hover::after {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.effect-glow.trigger-hover:hover {
+  filter: brightness(1.15);
+}
+.effect-glow.trigger-hover:hover::after {
+  border-color: rgba(129, 140, 248, 0.7);
+  box-shadow: 0 0 14px 4px rgba(129, 140, 248, 0.45);
+}
+
+@keyframes notorious-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(129, 140, 248, 0);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 16px 6px rgba(129, 140, 248, 0.5);
+    filter: brightness(1.15);
+  }
+}
+.effect-glow.trigger-auto {
+  animation: notorious-glow 1.8s ease-in-out infinite;
+}
+
+/* ─── shake ──────────────────────────────────────────────────────── */
+@keyframes notorious-shake {
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-4px) rotate(-1deg); }
+  30%  { transform: translateX(4px)  rotate(1deg); }
+  45%  { transform: translateX(-3px) rotate(-0.5deg); }
+  60%  { transform: translateX(3px)  rotate(0.5deg); }
+  75%  { transform: translateX(-2px); }
+  90%  { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+.effect-shake.trigger-hover:hover {
+  animation: notorious-shake 0.45s ease;
+}
+.effect-shake.trigger-auto {
+  animation: notorious-shake 0.6s ease-in-out infinite;
+}
+
+/* ─── pulse ──────────────────────────────────────────────────────── */
+@keyframes notorious-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.55);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 8px rgba(79, 70, 229, 0);
+  }
+}
+
+.effect-pulse.trigger-hover:hover {
+  animation: notorious-pulse 1.6s ease-in-out infinite;
+}
+.effect-pulse.trigger-auto {
+  animation: notorious-pulse 1.6s ease-in-out infinite;
+}
+
+/* ─── border-sweep ───────────────────────────────────────────────── */
+/* Animatable CSS custom property — required for conic-gradient anim */
+@property --notorious-border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes notorious-border-sweep {
+  to { --notorious-border-angle: 360deg; }
+}
+
+/* Override background to use padding-box fill + border-box gradient */
+.effect-border-sweep {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#4f46e5, #4f46e5) padding-box,
+    conic-gradient(
+      from var(--notorious-border-angle),
+      rgba(129, 140, 248, 0.15) 0%,
+      rgba(129, 140, 248, 0.15) 65%,
+      #818cf8 78%,
+      #e0e7ff 86%,
+      #818cf8 94%,
+      rgba(129, 140, 248, 0.15) 100%
+    ) border-box;
+}
+
+.effect-border-sweep.trigger-hover:hover {
+  animation: notorious-border-sweep 1.8s linear infinite;
+}
+
+.effect-border-sweep.trigger-auto {
+  animation: notorious-border-sweep 1.8s linear infinite;
+}
