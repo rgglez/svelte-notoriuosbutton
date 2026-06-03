@@ -1,12 +1,12 @@
 # svelte-notoriousbutton
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![GitHub all releases](https://img.shields.io/github/downloads/rgglez/svelte-notoriousbutton/total)
-![GitHub issues](https://img.shields.io/github/issues/rgglez/svelte-notoriousbutton)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/rgglez/svelte-notoriousbutton)
-[![GitHub release](https://img.shields.io/github/release/rgglez/svelte-notoriousbutton.svg)](https://github.com/rgglez/svelte-notoriousbutton/releases/)
-![GitHub stars](https://img.shields.io/github/stars/rgglez/svelte-notoriousbutton?style=social)
-![GitHub forks](https://img.shields.io/github/forks/rgglez/svelte-notoriousbutton?style=social)
+![GitHub all releases](https://img.shields.io/github/downloads/rgglez/svelte-notoriuosbutton/total)
+![GitHub issues](https://img.shields.io/github/issues/rgglez/svelte-notoriuosbutton)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/rgglez/svelte-notoriuosbutton)
+[![GitHub release](https://img.shields.io/github/release/rgglez/svelte-notoriuosbutton.svg)](https://github.com/rgglez/svelte-notoriuosbutton/releases/)
+![GitHub stars](https://img.shields.io/github/stars/rgglez/svelte-notoriuosbutton?style=social)
+![GitHub forks](https://img.shields.io/github/forks/rgglez/svelte-notoriuosbutton?style=social)
 
 **svelte-notoriousbutton** is a Svelte button component with CSS-only visual
 effects.
@@ -152,7 +152,9 @@ make tags
 
 ## Example
 
-You can try the example (Svelte 5) in the `example` directory. You can also view a [live example](https://svelte.dev/playground/04642e5a0de64dc7a4785e928ec12f18?version=5.56.1).
+You can try the example (Svelte 5) in the `example` directory. You can also view
+a
+[live example](https://svelte.dev/playground/04642e5a0de64dc7a4785e928ec12f18?version=5.56.1).
 
 ## Notes
 
