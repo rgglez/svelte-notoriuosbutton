@@ -26,8 +26,9 @@ patch:
 	@echo "Tagged v$(NEXT_VERSION) and pushed."
 
 publish:
-	@echo "Publishing v$(CURRENT_VERSION) to npm..."
-	@npm publish --access public
-	@echo "Published $(CURRENT_VERSION)."
+	@VERSION=$$(node -p "require('./package.json').version"); \
+	echo "Publishing v$$VERSION to npm..."; \
+	npm publish --access public; \
+	echo "Published v$$VERSION."
 
 release: patch publish
