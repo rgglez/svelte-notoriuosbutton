@@ -152,7 +152,7 @@ make tags
 
 ## Example
 
-You can try the example (Svelte 5) in the `example` directory.
+You can try the example (Svelte 5) in the `example` directory. You can also view a [live example](https://svelte.dev/playground/04642e5a0de64dc7a4785e928ec12f18?version=5.56.1).
 
 ## License
 
