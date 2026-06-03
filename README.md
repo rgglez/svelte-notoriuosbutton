@@ -158,7 +158,7 @@ a
 
 ## Notes
 
-* "Notorious" is a famous song by Duran Duran.
+* "[Notorious](https://www.youtube.com/watch?v=Z9z0e1Wm64M)" is a famous song by Duran Duran.
 
 ## License
 
