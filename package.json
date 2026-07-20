@@ -1,6 +1,6 @@
 {
   "name": "@rgglez/svelte-notoriousbutton",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Svelte button component with CSS-only visual effects: sweep, glow, shake, pulse",
   "svelte": "src/NotoriousButton5.svelte",
   "main": "src/NotoriousButton5.svelte",
